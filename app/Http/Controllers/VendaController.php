@@ -64,6 +64,11 @@ class VendaController extends Controller {
 
         for($i = 0; $i < count($produtosArray); $i++) {
             $valorTotal += doubleval($quantidadeArray[$i]) * doubleval($valoresArray[$i]);
+
+            if (doubleval($quantidadeArray[$i]) > Produto::find($produtosArray[$i])->quantidade) {
+                $mensagem = 'Quantidade de produto insuficiente!';
+                break;
+            }
         }
 
         $venda = new Venda();
