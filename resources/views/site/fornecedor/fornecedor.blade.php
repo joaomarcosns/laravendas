@@ -23,14 +23,15 @@
                 <tr class="text-center">
                     <th scope="row">{{ $fornecedor->id }}</th>
                     <td>{{ $fornecedor->nome }}</td>
+                    <td>{{ $fornecedor->cnpj }}</td>
                     <td>{{ $fornecedor->telefone }}</td>
                     <td>
-                        <a href="{{ route('site.editar-fornecedor', $fornecedor->id) }}" class="btn btn-secondary btn-sm"
+                        <a href="#" class="btn btn-secondary btn-sm"
                             title="Editar">
                             <i class="far fa-edit"></i>
                         </a>
                         <button class="btn btn-danger btn-sm"
-                            onclick="deleteItem('{{ route('site.delete-fornecedor', $fornecedor->id) }}')" title="Deletar">
+                            onclick="#" title="Deletar">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>

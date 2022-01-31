@@ -12,6 +12,8 @@ Route::get('/', function () { return view('site.index'); })->name('index');
 
 Route::prefix('entrada')->group(function () {
     Route::get('/', [EntradaController::class, 'index'])->name('site.entrada');
+    Route::get('/cadastrar', [EntradaController::class, 'create'])->name('site.entrada.create');
+    Route::post('/cadastrar', [EntradaController::class, 'store'])->name('site.entrada.store');
 });
 
 

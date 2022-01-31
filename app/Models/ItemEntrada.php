@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ItemEntrada extends Model
 {
     use HasFactory;
-    protected $table = 'item_entrada';
-    protected $fillable = ['id_entrada', 'id_produto', 'quantidade', 'valor_unitario'];
+    protected $table = 'itens_entrada';
+    protected $fillable = [
+        'id_entrada', 
+        'id_produto', 
+        'quantidade', 
+        'valor_produto',
+        'valor_fabrica'
+    ];
 
 }

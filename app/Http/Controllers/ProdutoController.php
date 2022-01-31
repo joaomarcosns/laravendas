@@ -40,8 +40,10 @@ class ProdutoController extends Controller {
     public function store(StoreProduto $request) {
         
         $mensagem = 'Produto cadastrado com sucesso!';
-
         $produto = new Produto();
+        $produto->nome = $request->input('nome');
+        $produto->valor = 0;
+        $produto->quantidade = 0;
         $produto->categoria = $request->input('categoria');
         $produto->save();
         

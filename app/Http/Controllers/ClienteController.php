@@ -35,9 +35,6 @@ class ClienteController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(StoreCliente $request) {
-
-        $request->validate();
-
         $mensagem = 'Cliente cadastrado com sucesso!';
 
         $cliente = new Cliente();

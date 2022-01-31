@@ -1,12 +1,11 @@
 @extends('layout.Indexlayout')
 
-@section('title', 'Fornecedor')
-@section('h3', 'Listagem de Fornecedores')
+@section('title', 'Listagem de Compas')
+@section('h3', 'Listagem de Compas')
 
 @section('conteudo')
     <div class="d-flex flex-row bd-highlight mb-3" style="margin-right: 500px;">
-        <a href="{{ route('site.cadastrar.fornecedor') }}" class="btn btn-success m-3"><i class="fa fa-plus"></i> Cadastrar
-            um Fornecedores</a>
+        <a href="{{ route('site.entrada.create') }}" class="btn btn-success m-3"><i class="fa fa-plus"></i> Cadastrar um Compra</a>
     </div>
     <table class="table table-hover">
         <thead>
@@ -19,7 +18,19 @@
             </tr>
         </thead>
         <tbody>
-            Okkkkkk
+            @foreach($entradas as $entrada)
+                <tr class="text-center">
+                    <td>{{ $entrada->id }}</td>
+                    <td>{{ $entrada->fornecedor }}</td>
+                    <td>{{ date('d/m/Y', strtotime($entrada->created_at)) }}</td>
+                    <td>{{ $entrada->valor_total }}</td>
+                    <td>
+                        <a href="#" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <a href="#" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                        <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
     </div>
@@ -33,5 +44,4 @@
             </div>
         </div>
     @endisset
-
 @endsection
